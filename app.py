@@ -4,8 +4,9 @@ import numpy as np
 import requests
 
 # --- CONFIGURACIÓN DE TELEGRAM ---
-TOKEN = "8684089964:AAHdi2pJcKntyTjbMg6j_s9MeMxabsRzZiA"
-CHAT_ID = "758652780"
+import os
+TOKEN = os.environ.get("TELEGRAM_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 
 # --- LISTAS DE ACTIVOS ---
