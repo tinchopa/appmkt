@@ -1,0 +1,31 @@
+name: Bot Swing Trading
+
+on:
+  schedule:
+    # Corre de Lunes a Viernes a las 19:30 UTC (16:30 de Argentina)
+    - cron: '30 19 * * 1-5'
+  workflow_dispatch: # Te permite correrlo a mano con un botón para probar
+
+jobs:
+  ejecutar-radar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el código
+      uses: actions/checkout@v3
+
+    - name: Instalar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Instalar librerías
+      run: |
+        pip install -r requirements.txt
+
+    - name: Ejecutar el bot
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python bot_multi.py
