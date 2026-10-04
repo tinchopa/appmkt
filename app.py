@@ -6,7 +6,13 @@ import numpy as np
 st.set_page_config(page_title="Scanner CEDEARs", layout="centered")
 st.title("📱 Scanner Técnico: US / CEDEARs")
 
-Ratios = {"AAPL": 10, "MSFT": 30, "SPY": 20, "QQQ": 20, "TSLA": 15, "NVDA": 24, "KO": 5}
+Ratios = {
+    "GOOG": 58, "AMD": 10, "ALAB": 44, "C": 3, "LLY": 56, "GE": 8, 
+    "URA": 5, "IBM": 15, "JMIA": 2, "LRCX": 56, "MCD": 24, "MELI": 120, 
+    "META": 24, "MU": 12, "MSFT": 30, "NU": 1, "NVDA": 24, "OKLO": 1, 
+    "PLTR": 1, "PAWN": 1, "PAAS": 1, "PEP": 6, "QCOM": 11, "RGTI": 2, 
+    "HOOD": 2, "TEM": 1, "TSLA": 15, "PATH": 2, "UNH": 33, "SPY": 60
+}
 ticker = st.selectbox("Selecciona el Activo", list(Ratios.keys()))
 
 @st.cache_data(ttl=3600)
