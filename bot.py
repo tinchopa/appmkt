@@ -8,7 +8,12 @@ import requests
 TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-acciones = ["AAPL", "MSFT", "SPY", "QQQ", "TSLA", "NVDA", "KO"]
+acciones = [
+    "GOOG", "AMD", "ALAB", "C", "LLY", "GE", "URA", "IBM", "JMIA", 
+    "LRCX", "MCD", "MELI", "META", "MU", "MSFT", "NU", "NVDA", "OKLO", 
+    "PLTR", "PAWN", "PAAS", "PEP", "QCOM", "RGTI", "HOOD", "TEM", 
+    "TSLA", "PATH", "UNH", "SPY"
+]
 
 def enviar_telegram(mensaje):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
