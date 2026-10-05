@@ -2,8 +2,8 @@ name: Bot Swing Trading
 
 on:
   schedule:
-    # Corre cada 30 minutos (* / 30) entre las 13 y las 20 UTC, de Lunes a Viernes
-    - cron: '*/30 13-20 * * 1-5'
+    # Corre a los minutos 14 y 44 de cada hora, entre las 13 y las 20 UTC (10:00 a 17:00 Arg)
+    - cron: '14,44 13-20 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -25,5 +25,4 @@ jobs:
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      # Apuntamos a bot.py
       run: python bot.py
