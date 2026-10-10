@@ -2,8 +2,8 @@ name: Bot Swing Trading
 
 on:
   schedule:
-    # Le pedimos que intente correr cada 15 minutos entre las 13 y las 20 UTC
-    - cron: '*/15 13-20 * * 1-5'
+    # Corre a las 14:12, 17:12 y 19:42 UTC (11:12, 14:12 y 16:42 en Argentina)
+    - cron: '12 14,17,19 * * 1-5'
   workflow_dispatch:
 
 jobs:
